@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#14132e">
+  <meta name="description" content="Star Catcher — משחק כוכבים קטן לכל גודל מסך">
+  <title>Star Catcher | Catch the stars</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="game" aria-label="משחק Star Catcher">
+    <!-- Full-viewport game world -->
+    <div id="stage" class="stage" tabindex="0" aria-label="אזור המשחק: גררי את הדמות או השתמשי בחצים">
+      <div class="sky-glow" aria-hidden="true"></div>
+      <div class="moon" aria-hidden="true">☾</div>
+      <div class="hills hills-back" aria-hidden="true"></div>
+      <div class="hills hills-front" aria-hidden="true"></div>
+      <div class="ground" aria-hidden="true"></div>
+      <div id="player" class="player" aria-label="הדמות שלך">👧</div>
+
+      <div id="overlay" class="overlay">
+        <div class="overlay-card">
+          <div class="overlay-symbol" aria-hidden="true">✦</div>
+          <div class="card-eyebrow">A LITTLE GAME IN THE STARS</div>
+          <h2 id="overlayTitle">מוכנה לתפוס כוכבים?</h2>
+          <p id="overlayText">אספי כוכבים, התחמקי ממטאורים וצברי כמה שיותר נקודות ב־30 שניות.</p>
+          <button id="start" class="start" type="button">התחילי לשחק <span aria-hidden="true">←</span></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Heads-up display floats over the game, rather than taking away playing space -->
+    <header class="topbar">
+      <div class="identity">
+        <div class="eyebrow"><span class="live-dot" aria-hidden="true"></span> MINI GAME / 01</div>
+        <h1>STAR <span>CATCHER</span><span class="title-star" aria-hidden="true">✦</span></h1>
+        <p>תפסי כוכבים. התחמקי ממטאורים.</p>
+      </div>
+      <div class="hud" aria-label="ניקוד וזמן">
+        <div class="hud-box"><span class="hud-label">ניקוד</span><strong id="score" aria-live="polite">0</strong></div>
+        <span class="hud-divider" aria-hidden="true"></span>
+        <div class="hud-box"><span class="hud-label">זמן</span><strong><span id="time">30</span><small>ש׳</small></strong></div>
+      </div>
+    </header>
+
+    <!-- Touch controls, kept above the bottom safe area on mobile -->
+    <div class="bottom-ui">
+      <div class="controls" dir="ltr" aria-label="כפתורי תנועה">
+        <button id="left" class="arrow-btn" type="button" aria-label="זוזי שמאלה">←</button>
+        <div class="control-instructions" dir="rtl"><span class="control-title">תנועה</span><span class="control-subtitle">הזיזי את הדמות</span></div>
+        <button id="right" class="arrow-btn" type="button" aria-label="זוזי ימינה">→</button>
+      </div>
+      <p class="hint">אפשר לשחק גם עם החצים במקלדת או לגרור את הדמות על המסך</p>
+    </div>
+  </main>
+</body>
+</html>
